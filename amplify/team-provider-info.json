@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serverlesspresso-dev-65511-authRole",
+      "UnauthRoleArn": "arn:aws:iam::105504518109:role/amplify-serverlesspresso-dev-65511-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::105504518109:role/amplify-serverlesspresso-dev-65511-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-serverlesspresso-dev-65511-deployment",
+      "UnauthRoleName": "amplify-serverlesspresso-dev-65511-unauthRole",
+      "StackName": "amplify-serverlesspresso-dev-65511",
+      "StackId": "arn:aws:cloudformation:us-east-1:105504518109:stack/amplify-serverlesspresso-dev-65511/60dcf340-2213-11ee-8a78-12dc9e3cdf0b",
+      "AmplifyAppId": "d2pg9h77fl5n2c"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      },
+      "auth": {
+        "serverlesspresso612449c3612449c3": {}
+      }
+    }
+  }
+}

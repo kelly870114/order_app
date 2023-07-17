@@ -1,0 +1,50 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "resourceNameTruncated": "server612449c3",
+    "userPoolName": "serverlesspresso612449c3_userpool_612449c3",
+    "autoVerifiedAttributes": [
+      "phone_number"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+      "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": true,
+    "passwordPolicyMinLength": "8",
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "phone_number"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientLambdaRole": "server612449c3_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "612449c3",
+    "resourceName": "serverlesspresso612449c3612449c3",
+    "authSelections": "userPoolOnly",
+    "useDefault": "manual",
+    "usernameAttributes": [
+      "phone_number"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "triggers": {},
+    "hostedUI": false,
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
+}
