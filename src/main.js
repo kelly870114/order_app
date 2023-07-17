@@ -32,7 +32,7 @@ Amplify.configure({
     // OPTIONAL - Amazon Cognito User Pool ID
     userPoolId: 'us-east-1_mcyPeT1XC',
     // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-    userPoolWebClientId: '2ph4tgivo2m73arnoqag620bcd',
+    userPoolWebClientId: 'iqt63tmrgju250k28vio0h4hu',
     // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
     mandatorySignIn: false,
     // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
@@ -87,7 +87,7 @@ app.use(VuesticPlugin,{
 // ** Websocket connection **
 //  PoolId: Retrieve this with the CLI command: aws cognito-identity list-identity-pools --max-results 10 --region <<REGION>>
 app.config.globalProperties.$poolId = 'us-east-1:ebefccd5-8d96-42a7-a6a8-42d1813f6645' // 'YourCognitoIdentityPoolId'
-//  IoTendpoint: Retrieve this with the CLI command: aws iot describe-endpoint --endpoint-type iot:Data-ATS --region us-west-2
+//  IoTendpoint: Retrieve this with the CLI command: aws iot describe-endpoint --endpoint-type iot:Data-ATS --region us-east-1
 app.config.globalProperties.$host = 'aaq341m90kftn-ats.iot.us-east-1.amazonaws.com' // 'YourAwsIoTEndpoint', e.g. 'prefix.iot.us-east-1.amazonaws.com'
 app.config.globalProperties.$region = 'us-east-1'      
 
