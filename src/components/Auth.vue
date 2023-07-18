@@ -181,7 +181,7 @@ export default {
       const code = this.code
       console.log(code)
       try {
-        const result = await Auth.sendCustomChallengeAnswer(this.cognitoUser, code)
+        const result = await this.$Amplify.Auth.sendCustomChallengeAnswer(this.cognitoUser, code)
         console.log('Result:', code, result)
       } catch (err) {
         console.error ('submitCode error: ', err)
