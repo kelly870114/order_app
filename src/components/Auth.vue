@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { Authentication } from '@aws-amplify/auth'
+import { Auth as Authentication } from '@aws-amplify/auth'
 const SMS_DELAY = 30000
 
 export default {
