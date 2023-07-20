@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { Auth } from '@aws-amplify/auth'
+import { Authentication } from '@aws-amplify/auth'
 const SMS_DELAY = 30000
 
 export default {
@@ -142,7 +142,7 @@ export default {
     async signIn () {
       try {
         console.log('Signing in: ', this.phone)
-        this.cognitoUser = await Auth.signIn(this.phone)
+        this.cognitoUser = await Authentication.signIn(this.phone)
       } catch (err) {
         if (err) {
           console.log(err)
@@ -170,7 +170,7 @@ export default {
       }
       try {
         console.log('signUp: ', params)
-        this.cognitoUser = await Auth.signUp(params)
+        this.cognitoUser = await Authentication.signUp(params)
         console.log(this.cognitoUser)
       } catch (err) {
         if (err) console.error(err)
@@ -181,8 +181,7 @@ export default {
       const code = this.code
       console.log(code)
       try {
-        console.log(Auth.getModuleName())
-        const result = await Auth.sendCustomChallengeAnswer(this.cognitoUser, code)
+        const result = await Authentication.sendCustomChallengeAnswer(this.cognitoUser, code)
         console.log('Result:', code, result)
       } catch (err) {
         console.error ('submitCode error: ', err)
@@ -195,7 +194,7 @@ export default {
       console.log("checkIfLoggedIn: ", loggedIn)
 
       if (loggedIn) {
-        const session = await Auth.currentSession()
+        const session = await Authentication.currentSession()
         console.log(session)
 
         // Check if admin requirements are met
@@ -215,13 +214,13 @@ export default {
       }
     },
     async signOut() {
-      await Auth.signOut()
+      await Authentication.signOut()
       this.resetForm ()
       this.emitter.emit('authStateChanged', { loggedIn: false })
     },
     async isAuthenticated() {
       try {
-        await Auth.currentSession()
+        await Authentication.currentSession()
         return true
       } catch {
         return false
