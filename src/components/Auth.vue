@@ -181,6 +181,7 @@ export default {
       const code = this.code
       console.log(code)
       try {
+        console.log(Auth.getModuleName())
         const result = await Auth.sendCustomChallengeAnswer(this.cognitoUser, code)
         console.log('Result:', code, result)
       } catch (err) {
