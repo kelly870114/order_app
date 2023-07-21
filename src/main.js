@@ -30,9 +30,9 @@ Amplify.configure({
     region: 'us-east-1',
     identityPoolRegion: 'us-east-1',
     // OPTIONAL - Amazon Cognito User Pool ID
-    userPoolId: 'us-east-1_mcyPeT1XC',
+    userPoolId: 'us-east-1_vRBa8wCJx',
     // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-    userPoolWebClientId: 'iqt63tmrgju250k28vio0h4hu',
+    userPoolWebClientId: '400mko0id9a0gjich67eioa7dc',
     // OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
     mandatorySignIn: false,
     // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
