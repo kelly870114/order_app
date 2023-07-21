@@ -16,7 +16,7 @@
         "S3AndCloudFront": {}
       },
       "auth": {
-        "serverlesspresso612449c3612449c3": {}
+        "serverlesspressoSESUserpool": {}
       }
     }
   }

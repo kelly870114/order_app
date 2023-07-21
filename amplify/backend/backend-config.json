@@ -1,6 +1,6 @@
 {
   "auth": {
-    "serverlesspresso612449c3612449c3": {
+    "serverlesspressoSESUserpool": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -9,18 +9,21 @@
           "SMS"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [],
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS"
+          ],
           "passwordPolicyMinLength": "8"
         },
         "signupAttributes": [
-          "PHONE_NUMBER"
+          "EMAIL"
         ],
         "socialProviders": [],
         "usernameAttributes": [
-          "PHONE_NUMBER"
+          "EMAIL"
         ],
         "verificationMechanisms": [
-          "PHONE_NUMBER"
+          "EMAIL"
         ]
       },
       "providerPlugin": "awscloudformation",

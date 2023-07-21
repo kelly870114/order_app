@@ -4,16 +4,17 @@
       <va-inner-loading :loading="isLoading">
         <va-card :bordered="false" style="margin-top: 100px;">
           <va-card-title>Register</va-card-title>
-          <va-card-content>Enter your phone. We will send you a text message with a one-time password.</va-card-content>
+          <va-card-content>Enter your email. We will send you a text message with a one-time password.</va-card-content>
 
           <div class="row flex">
             <div v-show="!isCodeRequested">
-              <vue-tel-input
-                :value="phone"
-                class="phone"
-                style="margin: 20px;"
-                @validate="validatePhone">
-              </vue-tel-input>
+              <!--<vue-tel-input-->
+              <!--  :value="phone"-->
+              <!--  class="phone"-->
+              <!--  style="margin: 20px;"-->
+              <!--  @validate="validatePhone">-->
+              <!--</vue-tel-input>-->
+              <input v-model="email" class="email" style="margin: 20px;" @input="validateEmail">
             </div>
             <div class="row flex" style="margin: 20px;">
               <va-button
@@ -60,12 +61,14 @@
 <script>
 import { Auth } from 'aws-amplify'
 const SMS_DELAY = 30000
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 export default {
   name: 'Auth',
   data() {
     return {
-      phone: '',
+      // phone: '',
+      email: '',
       isValid: false,
       code: '',
       isCodeRequested: false,
@@ -93,18 +96,23 @@ export default {
     const UIstate = JSON.parse(localStorage.UIstate)
     console.log('Mounted - Local storage: ', UIstate)
 
-    this.phone = UIstate.phone
+    // this.phone = UIstate.phone
+    this.email = UIstate.email
     await this.checkIfLoggedIn ()
     this.isLoading = false
   },
   methods: {
-    validatePhone (info) {
-      console.log('validatePhone: ', info)
-      this.isValid = info.valid
-      this.phone = info.number
+    // validatePhone (info) {
+    //   console.log('validatePhone: ', info)
+    //   this.isValid = info.valid
+    //   this.phone = info.number
+    // },
+    validateEmail() {
+      const emailValue = this.email;
+      this.isValid = emailRegex.test(emailValue);
     },
     resetForm () {
-      this.phone = ''
+      // this.phone = ''
       this.code = ''
       this.isCodeRequested = false
       this.errorMessages = ''
@@ -161,11 +169,14 @@ export default {
     },
     async signUp () {
       const params = {
-        username: this.phone,
-        phonenumber: this.phone,
+        // username: this.phone,
+        // phonenumber: this.phone,
+        username: this.email,
+        emailAddress: this.email,
         password: this.getRandomString(30),
         attributes: {
-          name: this.phone
+          // name: this.phone
+          name: this.email
         }
       }
       try {
