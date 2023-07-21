@@ -122,7 +122,8 @@ export default {
     },
     saveLocalStorage () {
       const UIstate = {
-        phone: this.phone
+        // phone: this.phone
+        email: this.email
       }
       console.log('Saving Local storage: ', UIstate)
 
@@ -136,7 +137,7 @@ export default {
       this.errorMessages = ''
       this.$nextTick(() => this.$refs.codeInput.$el.focus())
 
-      console.log('Saving: ', this.phone)
+      console.log('Saving: ', this.email)
       this.saveLocalStorage ()
 
       // Request the code
@@ -149,8 +150,8 @@ export default {
     },
     async signIn () {
       try {
-        console.log('Signing in: ', this.phone)
-        this.cognitoUser = await Auth.signIn(this.phone)
+        console.log('Signing in: ', this.email)
+        this.cognitoUser = await Auth.signIn(this.email)
       } catch (err) {
         if (err) {
           console.log(err)
@@ -248,7 +249,10 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.phone {
+/*.phone {*/
+/*  font-size: x-large*/
+/*}*/
+.email {
   font-size: x-large
 }
 .code {
