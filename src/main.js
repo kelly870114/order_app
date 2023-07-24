@@ -92,13 +92,13 @@ app.config.globalProperties.$host = 'aaq341m90kftn-ats.iot.us-east-1.amazonaws.c
 app.config.globalProperties.$region = 'us-east-1'      
 
 //APIGW OrderManager Service**
-app.config.globalProperties.$orderManagerEndpoint='https://7ot6ibmci9.execute-api.us-east-1.amazonaws.com/Prod/'
+app.config.globalProperties.$orderManagerEndpoint='https://7ot6ibmci9.execute-api.us-east-1.amazonaws.com/Prod'
 
 // **APIGW  Validator Service **
-app.config.globalProperties.$APIGWEndpointValidatorService = 'https://v5n46djb6l.execute-api.us-east-1.amazonaws.com/Prod/'
+app.config.globalProperties.$APIGWEndpointValidatorService = 'https://v5n46djb6l.execute-api.us-east-1.amazonaws.com/Prod'
 
 // **APIGW config Service **
-app.config.globalProperties.$APIGWEndpointConfigService = 'https://i5ve8974kh.execute-api.us-east-1.amazonaws.com/Prod/'
+app.config.globalProperties.$APIGWEndpointConfigService = 'https://i5ve8974kh.execute-api.us-east-1.amazonaws.com/Prod'
 
 // ** readonly config store endpoint **
 app.config.globalProperties.$ConfigEndpoint = 'https://d2q1lahfnah8ba.cloudfront.net'
